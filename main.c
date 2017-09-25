@@ -24,7 +24,7 @@ static char *kbhit()
    FD_ZERO(&FdInSet);
    FD_SET(nFdStdIn, &FdInSet);
    sTijdSlot.tv_sec = 0l;
-   sTijdSlot.tv_usec = 10000;
+   sTijdSlot.tv_usec = 1000;
    iSelRdy = select(64, &FdInSet, NULL, NULL, (struct timeval *) &sTijdSlot);
    if (iSelRdy > 0) {
       if(FD_ISSET(nFdStdIn, &FdInSet)) {
